@@ -26,14 +26,14 @@ Requests-HTML: HTML人性化解析™
     >>> from requests_html import session
     >>> r = session.get('https://python.org/')
 
-按原样获取页面上所有链接并返回列表（锚点除外）:
+将页面上所有链接（包含绝对和相对路径）组成列表后返回（锚点除外）:
 
 .. code-block:: pycon
 
     >>> r.html.links
     {'/users/membership/', '/about/gettingstarted/', 'http://feedproxy.google.com/~r/PythonInsider/~3/zVC80sq9s00/python-364-is-now-available.html', '/about/success/', 'http://flask.pocoo.org/', 'http://www.djangoproject.com/', '/blogs/', ... '/psf-landing/', 'https://wiki.python.org/moin/PythonBooks'}
 
-以绝对路径形式抓取页面上所有链接并返回列表（锚点除外）：
+将页面上所有链接（统一成绝对路径形式）组成列表后返回（锚点除外）：
 
 .. code-block:: pycon
 
@@ -58,14 +58,14 @@ Requests-HTML: HTML人性化解析™
     Help
     Python Brochure
 
-返回元素属性键值对组成的字典:
+将元素属性以键值对形式组成字典后返回:
 
 .. code-block:: pycon
 
     >>> about.attrs
     {'id': 'about', 'class': 'tier-1 element-1  ', 'aria-haspopup': 'true'}
 
-选择元素内的元素：
+将元素内的指定元素组成列表后返回：
 
 .. code-block:: pycon
 
